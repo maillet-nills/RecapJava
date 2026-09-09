@@ -10,6 +10,7 @@ public class Package {
         this.customerFullName = customerFullName;
         this.addr = addr;
         this.deliveryPoint = deliveryPoint;
+        this.deliveryPoint.associatePackage(this);
     }
 
     public float calcPrice(){
