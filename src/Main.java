@@ -5,8 +5,8 @@ void main() {
     Addr franceAdress = new Addr("37 Avenue de la Capucine", "31100", "Toulouse", "France");
     Addr germanyAdress = new Addr("9 Kleiststr.", "52477", "Alsdorf", "Germany");
 
-    DeliveryPoint franceDeliveryPoint = new DeliveryPoint("FranceDepot", franceAdress, new ArrayList<Package>());
-    DeliveryPoint germanyDeliveryPoint = new DeliveryPoint("GermanyDepot", germanyAdress, new ArrayList<Package>());
+    DeliveryPoint franceDeliveryPoint = new DeliveryPoint("FranceDepot", franceAdress, new ArrayList<Package>(), new ArrayList<Days>());
+    DeliveryPoint germanyDeliveryPoint = new DeliveryPoint("GermanyDepot", germanyAdress, new ArrayList<Package>(), new ArrayList<Days>());
 
     Package packageOne = new Package(3.20F, "Pierre Paul", germanyAdress, franceDeliveryPoint);
     Package packageTwo = new Package(1.30F, "Pedro Ravier", germanyAdress, franceDeliveryPoint);
@@ -17,4 +17,8 @@ void main() {
     System.out.println(germanyAdress.isInFrance());
 
     System.out.println(franceDeliveryPoint.calcProfitability());
+    System.out.println(germanyDeliveryPoint.calcProfitability());
+
+    franceDeliveryPoint.showSchedule();
+
 }
